@@ -54,25 +54,3 @@ dkms.conf
 # debug information files
 *.dwo
 
-# Build outputs
-build/
-*.exe
-*.dll
-*.obj
-*.pdb
-*.lib
-*.exp
-*.ilk
-
-# Visual Studio
-.vs/
-*.VC.db
-*.VC.VC.opendb
-
-# CMake
-CMakeFiles/
-CMakeCache.txt
-
-# Generated resource
-app.res
-
