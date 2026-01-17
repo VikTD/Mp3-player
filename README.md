@@ -1,112 +1,41 @@
-# 🎵 MP3 Player (C) — Windows (Console)
+# MP3 Player (Console) — C / Windows
 
-Конзолен MP3 плейър на **C** за Windows.
+Конзолен MP3 плеър, написан на C. Проектът е нарочно “beginner-style” (по-прост код), но е напълно работещ: зарежда MP3 файлове от папка, пуска/паузира, сменя песни, контролира звук и т.н.
 
-## Какво може (Features)
-- Зареждане на папка с `.mp3` (**включително подпапки**)
-- Playlist управление (Next/Prev + избор на текуща песен)
-- Play / Pause / Resume
-- Progress bar + време
-- Volume, Auto-Next, Shuffle, Loop
-- Смяна на папка през **File Explorer** (folder picker) + fallback към ръчно въвеждане
+> ✅ Platform: **Windows 10/11**  
+> 🔊 Audio: **miniaudio** (single-header библиотека)
 
 ---
 
-## 📁 Структура на проекта
+## Какво ти трябва (преди компилиране)
 
-- `scr/` — сорс кодът (C файлове)
-  - `main.c` — меню/контроли, визуализация в терминала, input loop
-  - `playlist.c/.h` — сканиране на папки (рекурсивно), филтриране `.mp3`, сортиране, next/prev
-  - `audio.c/.h` — възпроизвеждане (miniaudio), pause/resume/seek, позиция/дължина
-  - `config.c/.h` — запис/четене на настройки от `config.txt`
-- `third_party/` — външни зависимости (single-header, включени в repo-то)
-  - `miniaudio.h`
-- `assets/`
-  - `app.ico` — икона за `.exe` (вгражда се при билд)
-- `config.txt` — настройки (volume/auto-next/shuffle/loop/sort)
+### 1) Visual Studio C++ Build Tools (или Visual Studio Community)
+Трябва ти MSVC компилаторът (`cl.exe`) + Windows SDK (`rc.exe`, `winmm.lib` и др.).
+
+Инсталирай едно от следните:
+- **Visual Studio Build Tools 2022** (по-леко, само за компилиране), или
+- **Visual Studio Community 2022** (IDE)
+
+При инсталация отметни:
+- ✅ **Desktop development with C++**
+- ✅ **Windows 10/11 SDK**
+
+След това ще имаш **x64 Native Tools Command Prompt for VS**.
+
+### 2) Файлове в repo-то
+Увери се, че имаш:
+- `main.c`
+- `third_party\miniaudio.h`
+- `build.bat`
+- (по желание за икона) `app.ico` + `app.rc`
 
 ---
 
-## ⬇️ Изтегляне
+## Компилиране (автоматично) — build.bat
 
-### Вариант 1: ZIP (най-лесно)
-GitHub → **Code → Download ZIP** → разархивираш.
+1) Отвори от Start меню:
+**x64 Native Tools Command Prompt for VS** (2022/2019)
 
-### Вариант 2: Git clone
+2) Отиди в папката на проекта:
 ```bat
-git clone https://github.com/VikTD/Mp3-player.git
-cd Mp3-player
-```
-
----
-
-## ✅ Какво е нужно (Windows)
-
-### Препоръчително
-- **Visual Studio 2022** или **Build Tools 2022**
-- Workload: **Desktop development with C++** (MSVC + Windows SDK)
-
-> Не е нужно CMake. Проектът се компилира директно с `cl`.
-
----
-
-## 🛠️ Компилиране (Windows):
-
-### 1) One‑click (най-лесно)
-В root папката има файл:
-- `build_windows.bat`
-
-Просто го стартираш (double‑click). Скриптът:
-- намира Visual Studio tools (VsDevCmd)
-- вгражда иконата (`assets/app.ico`) чрез `rc`
-- компилира и прави: `build\MusicPlayer.exe`
-
-✅ Резултатът е тук:
-- `build\MusicPlayer.exe`
-
-### 2) Ръчно (ако искаш да видиш командите)
-Отвори **Developer Command Prompt for VS 2022**, после:
-
-```bat
-cd /d C:\path\to\Mp3-player
-
-rc /nologo /fo build\app.res app.rc
-cl /nologo /std:c17 /O2 /W3 /D_CRT_SECURE_NO_WARNINGS ^
-  /I third_party /I scr ^
-  scr\main.c scr\audio.c scr\playlist.c scr\config.c ^
-  build\app.res ^
-  /Fe"build\MusicPlayer.exe" ^
-  /link ole32.lib uuid.lib shell32.lib winmm.lib
-```
-
----
-
-## ▶️ Стартиране
-```bat
-build\MusicPlayer.exe
-```
-
----
-
-## 📝 config.txt
-`config.txt` съдържа **5 числа**, разделени със space:
-
-```
-<volume> <auto_next> <shuffle> <loop> <sort_mode>
-```
-
-Пример:
-```
-50 1 0 0 1
-```
-
-- `volume` : 0–100
-- `auto_next` : 0/1
-- `shuffle` : 0/1
-- `loop` : 0/1
-- `sort_mode` :
-  - `0` = sort by full path
-  - `1` = sort by file name
-  - `2` = sort by folder, after that name
-
----
+cd /d C:\path\to\repo
