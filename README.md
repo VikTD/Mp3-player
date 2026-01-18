@@ -32,7 +32,7 @@
 ✅ Компилирането става от:
 **x64 Native Tools Command Prompt for VS** (или “Developer Command Prompt for VS”).
 
-❌ Няма да стане от **CMD** или **PowerShell**
+❌ Без: **CMD или PowerShell**
 
 ---
 
@@ -53,7 +53,9 @@
 
 ## Използвани библиотеки (third-party)
 
-- **miniaudio** (single-header) — `third_party/miniaudio.h`
+- **miniaudio** (single-header) — `third_party/miniaudio.h`  
+  Website: https://miniaud.io  
+  GitHub: https://github.com/mackron/miniaudio
 
 ---
 
