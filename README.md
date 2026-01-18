@@ -50,8 +50,6 @@
 - ✅ **Desktop development with C++**
 - ✅ **Windows 10/11 SDK**
 
-Снимка с пример кои компоненти да са отметнати:
-
 ![VS Build Tools components](assets/vs_buildtools_components.png)
 
 > Ако `rc` или `winmm.lib` липсват, почти винаги е защото Windows SDK не е инсталиран.
