@@ -7,21 +7,23 @@
 
 ---
 
-## ⚠️ WARNING
+## ⚠️ WARNING (силата на звука)
 
 **ВНИМАНИЕ:** След като избереш папка с MP3 файлове, приложението **автоматично** пуска първата песен и то на **100% (максимален) звук**.
 
 Преди да пуснете приложението:
-- намали системния звук на Windows
+- намали системния звук на Windows (или махни слушалките)
 
-Ако вече е пуснато и сте избрали папка с Mp3:
+Ако вече е пуснато и сте избрали папка с MP3:
 - натисни **6** и въведи стойност за звук **0–100** (например `10`), за да намалиш силата на звука.
 
 ---
 
-## Готов .exe
+## Готов .exe (без компилиране)
 
-Можеш да си изтеглиш готовата версия от **Releases** (в GitHub repo-то) и директно да стартираш `.exe` файла.
+Можеш да си изтеглиш готовата версия от **Releases** и директно да стартираш `.exe` файла.
+
+- Releases: https://github.com/VikTD/Mp3-player/releases/tag/v1.0
 
 ---
 
@@ -32,22 +34,27 @@
 ✅ Компилирането става от:
 **x64 Native Tools Command Prompt for VS** (или “Developer Command Prompt for VS”).
 
-❌ Без: **CMD или PowerShell**
-
 ---
 
 ## Какво ти трябва (преди компилиране)
 
-### 1) Visual Studio C++ Build Tools / Visual Studio Community
+### 1) Visual Studio C++ Build Tools (или Visual Studio Community)
+
 Трябва ти MSVC компилаторът (`cl.exe`) + Windows SDK.
 
-Инсталирай едно от следните:
-- **Visual Studio Build Tools 2022** (по-леко, само за компилиране), или
-- **Visual Studio Community 2022** (IDE)
+Изтегляне (официално):
+- Visual Studio **Build Tools** (препоръчано): https://visualstudio.microsoft.com/downloads/?q=build+tools
+- Visual Studio **Community** (ако искаш IDE): https://visualstudio.microsoft.com/vs/community/
 
 При инсталация отметни:
 - ✅ **Desktop development with C++**
 - ✅ **Windows 10/11 SDK**
+
+Снимка с пример кои компоненти да са отметнати:
+
+![VS Build Tools components](assets/vs_buildtools_components.png)
+
+> Ако `rc` или `winmm.lib` липсват, почти винаги е защото Windows SDK не е инсталиран.
 
 ---
 
@@ -62,7 +69,7 @@
 ## Компилиране (автоматично) — build.bat
 
 1) От Start меню отвори:
-**x64 Native Tools Command Prompt for VS**(или “Developer Command Prompt for VS”)
+**x64 Native Tools Command Prompt for VS** (или “Developer Command Prompt for VS”)
 
 2) Отиди в папката на проекта:
 ```bat
@@ -81,7 +88,7 @@ build.bat
 
 ## Компилиране (ръчно) — команди
 
-> Пускай командите в **x64 Native Tools Command Prompt for VS**(или “Developer Command Prompt for VS”).
+> Пускай командите в **x64 Native Tools Command Prompt for VS** (или “Developer Command Prompt for VS”).
 
 ### Вариант A: С икона (app.rc → app.res)
 ```bat
@@ -125,4 +132,4 @@ build\Mp3Player.exe
 - `/I third_party`
 
 ### `cl is not recognized` / `rc is not recognized`
-Не си отворил **x64 Native Tools Command Prompt for VS (или “Developer Command Prompt for VS”)** или нямаш инсталиран Windows SDK.
+Не си отворил **x64 Native Tools Command Prompt for VS** (или “Developer Command Prompt for VS”) или нямаш инсталиран Windows SDK.
