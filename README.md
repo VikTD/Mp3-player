@@ -46,7 +46,7 @@
 ## Компилиране (автоматично) — build.bat
 
 1) От Start меню отвори:
-**x64 Native Tools Command Prompt for VS** (2022/2019)
+**x64 Native Tools Command Prompt for VS (или “Developer Command Prompt for VS”)**
 
 2) Отиди в папката на проекта:
 ```bat
