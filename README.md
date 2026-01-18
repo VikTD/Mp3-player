@@ -109,4 +109,4 @@ build\Mp3Player.exe
 - `/I third_party`
 
 ### `cl is not recognized` / `rc is not recognized`
-Не си отворил **x64 Native Tools Command Prompt for VS** или нямаш инсталиран Windows SDK.
+Не си отворил **x64 Native Tools Command Prompt for VS (или “Developer Command Prompt for VS”)** или нямаш инсталиран Windows SDK.
