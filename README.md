@@ -7,6 +7,18 @@
 
 ---
 
+## ⚠️ WARNING
+
+**ВНИМАНИЕ:** След като избереш папка с MP3 файлове, приложението **автоматично пуска първата песен и то на **100% (максимален) звук**.
+
+Преди да пуснете приложението:
+- намали системния звук на Windows
+
+Ако вече е пуснато и сте избрали папка с Mp3:
+- натисни **6** и въведи стойност за звук **0–100** (например `10`), за да намалиш силата на звука.
+
+---
+
 ## Готов .exe
 
 Можеш да си изтеглиш готовата версия от **Releases** (в GitHub repo-то) и директно да стартираш `.exe` файла.
@@ -19,6 +31,8 @@
 
 ✅ Компилирането става от:
 **x64 Native Tools Command Prompt for VS** (или “Developer Command Prompt for VS”).
+
+❌ Няма да стане от **CMD** или **PowerShell**
 
 ---
 
@@ -46,7 +60,7 @@
 ## Компилиране (автоматично) — build.bat
 
 1) От Start меню отвори:
-**x64 Native Tools Command Prompt for VS (или “Developer Command Prompt for VS”)**
+**x64 Native Tools Command Prompt for VS**(или “Developer Command Prompt for VS”)
 
 2) Отиди в папката на проекта:
 ```bat
@@ -65,7 +79,7 @@ build.bat
 
 ## Компилиране (ръчно) — команди
 
-> Пускай командите в **x64 Native Tools Command Prompt for VS (или “Developer Command Prompt for VS”)**.
+> Пускай командите в **x64 Native Tools Command Prompt for VS**(или “Developer Command Prompt for VS”).
 
 ### Вариант A: С икона (app.rc → app.res)
 ```bat
