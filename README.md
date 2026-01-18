@@ -52,8 +52,6 @@
 
 ![VS Build Tools components](assets/vs_buildtools_components.png)
 
-> Ако `rc` или `winmm.lib` липсват, почти винаги е защото Windows SDK не е инсталиран.
-
 ---
 
 ## Използвани библиотеки (third-party)
