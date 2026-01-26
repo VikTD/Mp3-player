@@ -1,4 +1,3 @@
-// tiny mp3 player (console). intentionally "beginner" style.
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
